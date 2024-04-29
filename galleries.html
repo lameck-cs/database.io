@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w3.css">
+    <style>
+        .mySlides {display:none;}
+        </style>
+    <title>Ridex-View your car</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <div class="w3-container w3-teal">
+            <h1>My Car Galleries</h1>
+          </div>
+        <div class="w3-content w3-section" style="max-width:800px">
+            <img class="mySlides" src="car-1.jpg" style="width:100%">
+            <img class="mySlides" src="car-2.jpg" style="width:100%">
+            <img class="mySlides" src="car-4.jpg" style="width:100%">
+          </div>
+          
+          <script>
+          var myIndex = 0;
+          carousel();
+          
+          function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+          }
+          </script>
+            
+        </header>
+    <main>
+       
+          
+          <div class="w3-row-padding w3-margin-top">
+            <div class="w3-third">
+              <div class="w3-card">
+                <img src="car-3.jpg" style="width:100%">
+                <div class="w3-container">
+                  <h5>5 Terre</h5>
+                </div>
+              </div>
+            </div>
+          
+            <div class="w3-third">
+              <div class="w3-card">
+                <img src="car-5.jpg" style="width:100%">
+                <div class="w3-container">
+                  <h5>Monterosso</h5>
+                </div>
+              </div>
+            </div>
+          
+            <div class="w3-third">
+              <div class="w3-card">
+                <img src="car-6.jpg" style="width:100%">
+                <div class="w3-container">
+                  <h5>Vernazza</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="w3-row-padding w3-margin-top">
+            <div class="w3-third">
+              <div class="w3-card">
+                <img src="car-1.jpg" style="width:100%">
+                <div class="w3-container">
+                  <h5>Manarola</h5>
+                </div>
+              </div>
+            </div>
+          
+            <div class="w3-third">
+              <div class="w3-card">
+                <img src="car-2.jpg" style="width:100%">
+                <div class="w3-container">
+                  <h5>Corniglia</h5>
+                </div>
+              </div>
+            </div>
+          
+            <div class="w3-third">
+              <div class="w3-card">
+                <img src="car-3.jpg" style="width:100%">
+                <div class="w3-container">
+                  <h5>Riomaggiore</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    </main>
+    <footer>
+      <p>
+        <strong> LAMECK KIPSANG
+         <BR>
+           COM/M/0016/2022
+         </strong>
+       </p>
+    </footer>
+</body>
+</html>

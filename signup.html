@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Sign In | Sign Up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="btn-group">
+          <div id="signin-btn" class="btn signin-btn">Sign In</div>
+          <div id="signup-btn" class="btn">Sign Up</div>
+        </div>
+        <!-- Sign In Form -->
+        <form id="login-form" novalidate>
+          <h2>Sign In</h2>
+          <div class="form-group">
+            <span>Username</span>
+            <input type="text" placeholder="Enter username" value="" required />
+          </div>
+          <div class="form-group">
+            <span>Password</span>
+            <input type="text" placeholder="Enter password" required />
+          </div>
+          <div class="button">
+            <input type="submit" value="Login" />
+          </div>
+          <p>OR</p>
+          <a class="facebook-button button">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fb-text">LOG IN WITH FACEBOOK</i>
+          </a>
+          <a class="google-button button">
+            <i class="fa-brands fa-google"></i>
+            <i class="g-text">LOG IN WITH GOOGLE</i>
+          </a>
+          <p>
+            <strong> LAMECK KIPSANG
+             <BR>
+               COM/M/0016/2022
+             </strong>
+           </p>
+        </form>
+        <!-- Sign Up Form -->
+        <form id="signup-form" novalidate>
+          <h2>Registration</h2>
+          <div class="form-group">
+            <span>Name</span>
+            <input type="text" placeholder="Enter name" value="" required />
+          </div>
+          <div class="form-group">
+            <span>Username</span>
+            <input type="text" placeholder="Enter username" value="" required />
+          </div>
+          <div class="form-group">
+            <span>Email</span>
+            <input type="email" placeholder="Enter email" required />
+          </div>
+          <div class="form-group">
+            <span>Phone Number</span>
+            <input
+              type="text"
+              placeholder="Enter 10 digits phone number"
+              pattern="[0-9]{10}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <span>Password</span>
+            <input type="text" placeholder="Enter password" required />
+          </div>
+          <div class="form-group">
+            <span>Confirm Password</span>
+            <input type="text" placeholder="Enter confirm password" required />
+          </div>
+          <div class="button">
+            <input type="submit" value=" Register" />
+            <p>
+              <strong> LAMECK KIPSANG
+               <BR>
+                 COM/M/0016/2022
+             </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const signupForm = document.getElementById("signup-form");
+      const signinForm = document.getElementById("login-form");
+      // form validation with the help of javascript
+      signupForm.addEventListener("submit", (e) => {
+        if (signupForm.checkValidity() === false) {
+          e.preventDefault();
+          e.stopPropagation();
+          signupForm.classList.add("was-validated");
+          return false;
+        }
+      });
+      signinForm.addEventListener("submit", (e) => {
+        if (signinForm.checkValidity() === false) {
+          e.preventDefault();
+          e.stopPropagation();
+          signinForm.classList.add("was-validated");
+          return false;
+        }
+      });
+    </script>
+    <script>
+      const btnBg1 = document.getElementById("signup-btn");
+      const btnBg2 = document.getElementById("signin-btn");
+      $(document).ready(function () {
+        $("#signup-btn").click(function () {
+          $("#signup-form").show();
+          $("#login-form").hide();
+          btnBg1.classList.add("signup-btn");
+          btnBg2.classList.remove("signin-btn");
+        });
+        $("#signin-btn").click(function () {
+          $("#login-form").show();
+          $("#signup-form").hide();
+          btnBg2.classList.add("signin-btn");
+          btnBg1.classList.remove("signup-btn");
+        });
+      });
+    </script>
+  </body>
+</html>
